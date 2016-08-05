@@ -46,6 +46,15 @@ namespace ShopwareApiTests
         }
 
         [TestMethod]
+        public void getAllArticles()
+        {
+            ShopwareApi shopwareApi = ApiConnection.getDemoApi();
+            List<ArticleMain> articles = shopwareApi.getArticleRessource().getAll();
+
+            Console.WriteLine("Found articles: " + articles.Count);
+        }
+
+        [TestMethod]
         public void getArticleByOrdernumber()
         {
             ShopwareApi shopwareApi = ApiConnection.getDemoApi();

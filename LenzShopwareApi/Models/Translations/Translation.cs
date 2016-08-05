@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lenz.ShopwareApi.Models.Translations
 {
-    class Translation
+    public class Translation
     {
     }
 }

@@ -1,4 +1,5 @@
-﻿using Lenz.ShopwareApi.Models.Suppliers;
+﻿using Lenz.ShopwareApi.Models.Categories;
+using Lenz.ShopwareApi.Models.Suppliers;
 using Lenz.ShopwareApi.Models.Taxes;
 using System;
 using System.Collections.Generic;

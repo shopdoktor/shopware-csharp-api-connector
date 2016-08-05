@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lenz.ShopwareApi.Models.Images
 {
-    class Image
+    public class Image
     {
 
     }

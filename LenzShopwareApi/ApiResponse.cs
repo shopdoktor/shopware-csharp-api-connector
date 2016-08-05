@@ -11,5 +11,6 @@ namespace Lenz.ShopwareApi
     {
         public TData data;
         public Boolean success;
+        public string message;
     }
 }

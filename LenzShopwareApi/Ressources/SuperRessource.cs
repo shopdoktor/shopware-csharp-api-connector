@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -20,17 +19,35 @@ namespace Lenz.ShopwareApi.Ressources
 
         public TResponse get(int id)
         {
-            return this.get(id.ToString());
+            try
+            {
+                return this.get(id.ToString());
+            }
+            catch (Exception e)
+            {
+                // Pass exception to next level.
+                throw e;
+            }
         }
 
         public TResponse get(string id)
         {
-            return convertResponseStringToObject<TResponse>(this.executeGet(id)).data;
+            ApiResponse<TResponse> response = convertResponseStringToObject<TResponse>(this.executeGet(id));
+            if (!response.success)
+            {
+                throw new Exception(response.message);
+            }
+            return response.data;
         }
 
         public List<TResponse> getAll()
         {
-            return convertResponseStringToObject<List<TResponse>>(executeGetAll()).data;
+            ApiResponse<List<TResponse>> response = convertResponseStringToObject<List<TResponse>>(executeGetAll());
+            if(!response.success)
+            {
+                throw new Exception(response.message);
+            }
+            return response.data;
         }
 
         public void add(TResponse data)
@@ -77,7 +94,10 @@ namespace Lenz.ShopwareApi.Ressources
 
         protected ApiResponse<A> convertResponseStringToObject<A>(string responseString)
         {
-            return JsonConvert.DeserializeObject<ApiResponse<A>>(responseString);
+            return JsonConvert.DeserializeObject<ApiResponse<A>>(responseString, new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
         }
 
         protected String executeGet(string id)

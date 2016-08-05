@@ -59,12 +59,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="RestSharp, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.105.1.0\lib\net451\RestSharp.dll</HintPath>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -83,11 +83,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiResponse.cs" />
+    <Compile Include="JSON.net\SingleOrArrayConverter.cs" />
     <Compile Include="Models\Articles\ArticleDetail.cs" />
     <Compile Include="Models\Articles\ArticleMain.cs" />
     <Compile Include="Models\Articles\ArticleMainDetail.cs" />
     <Compile Include="Models\Articles\Attribute.cs" />
-    <Compile Include="Models\Articles\Category.cs" />
     <Compile Include="Models\Articles\ConfiguratorOption.cs" />
     <Compile Include="Models\Articles\CustomerGroup.cs" />
     <Compile Include="Models\Articles\Download.cs" />
@@ -100,11 +100,18 @@
     <Compile Include="Models\Articles\SeoCategory.cs" />
     <Compile Include="Models\Articles\SimilarArticle.cs" />
     <Compile Include="Models\Articles\Translation.cs" />
+    <Compile Include="Models\Categories\Category.cs" />
+    <Compile Include="Models\Downloads\Download.cs" />
+    <Compile Include="Models\Images\Image.cs" />
+    <Compile Include="Models\Links\Link.cs" />
     <Compile Include="Models\Orders\Order.cs" />
     <Compile Include="Models\Articles\Supplier.cs" />
     <Compile Include="Models\Articles\Tax.cs" />
+    <Compile Include="Models\Translations\Translation.cs" />
+    <Compile Include="Ressources\CategoryRessource.cs" />
     <Compile Include="Ressources\ArticleRessource.cs" />
     <Compile Include="Ressources\CustomerRessource.cs" />
+    <Compile Include="Ressources\Interfaces\ICategoryRessource.cs" />
     <Compile Include="Ressources\Interfaces\IArticleRessource.cs" />
     <Compile Include="Ressources\Interfaces\IOrderRessource.cs" />
     <Compile Include="Ressources\OrderRessource.cs" />
@@ -139,6 +146,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

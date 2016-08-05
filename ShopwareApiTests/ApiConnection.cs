@@ -12,7 +12,7 @@ namespace ShopwareApiTests
         public static ShopwareApi getDemoApi()
         {
             // URL, USERNAME, API-KEY
-            //ShopwareApi shopwareApi = new ShopwareApi("", "", "");
+            ShopwareApi shopwareApi = new ShopwareApi("https://www.shopapi.de/api/", "shopdoktor", "IcDDc7diFMT1rhd3ZoDPHsB6eaAFEE10EqJk5gny");
             return shopwareApi;
         }
     }

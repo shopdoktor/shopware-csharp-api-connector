@@ -8,6 +8,7 @@ using System.Net;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using Lenz.ShopwareApi.Ressources;
+using RestSharp.Authenticators;
 
 namespace Lenz.ShopwareApi
 {
@@ -19,6 +20,7 @@ namespace Lenz.ShopwareApi
         private RestClient client;
 
         private ArticleRessource articleRessource;
+        private CategoryRessource categoryRessource;
         private OrderRessource orderRessource;
 
         public ShopwareApi(string url, string username, string password)
@@ -44,6 +46,15 @@ namespace Lenz.ShopwareApi
             return this.articleRessource;
         }
 
+        public ICategoryRessource getCategoryRessource()
+        {
+            if (this.categoryRessource == null)
+            {
+                this.categoryRessource = new CategoryRessource(this.client);
+            }
+            return this.categoryRessource;
+        }
+
         public OrderRessource getOrderRessource()
         {
             if (this.orderRessource == null)
@@ -53,8 +64,7 @@ namespace Lenz.ShopwareApi
             return this.orderRessource;
         }
     }
-    public class DigestAuthenticator :
-        IAuthenticator
+    public class DigestAuthenticator : IAuthenticator
     {
         private readonly string _user;
         private readonly string _pass;

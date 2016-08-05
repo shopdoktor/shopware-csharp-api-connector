@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lenz.ShopwareApi.Models.Downloads
 {
-    class Download
+    public class Download
     {
     }
 }

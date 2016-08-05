@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lenz.ShopwareApi.Models.Links
 {
-    class Link
+    public class Link
     {
     }
 }
