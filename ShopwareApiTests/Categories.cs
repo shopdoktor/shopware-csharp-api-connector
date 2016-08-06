@@ -66,8 +66,8 @@ namespace ShopwareApiTests
         {
             ShopwareApi shopwareApi = ApiConnection.getDemoApi();
 
-            Category category = shopwareApi.getCategoryRessource().get(5);
-            category.name = "Sale";
+            Category category = shopwareApi.getCategoryRessource().get(8);
+            category.name = "Kategorie 8";
 
             shopwareApi.getCategoryRessource().update(category);
         }

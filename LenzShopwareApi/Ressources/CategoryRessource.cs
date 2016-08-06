@@ -1,6 +1,8 @@
 ﻿using RestSharp;
 using System;
 using Lenz.ShopwareApi.Models.Categories;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Lenz.ShopwareApi.Ressources
 {
@@ -10,6 +12,18 @@ namespace Lenz.ShopwareApi.Ressources
             : base (client)
         {
             ressourceUrl = "categories";
+        }
+
+        public new List<Category> getAll()
+        {
+            ApiRequest request = new ApiRequest(this.ressourceUrl, Method.GET);
+            ApiRequestExecutor executor = new ApiRequestExecutor();
+
+            ApiResponse<List<Category>> response = executor.execute<List<Category>>(client, request);
+
+            Debug.WriteLine("New Method used!");
+
+            return response.data;
         }
 
         public new void add(Category category)

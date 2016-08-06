@@ -82,6 +82,8 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiRequestExecutor.cs" />
+    <Compile Include="ApiRequest.cs" />
     <Compile Include="ApiResponse.cs" />
     <Compile Include="JSON.net\SingleOrArrayConverter.cs" />
     <Compile Include="Models\Articles\ArticleMain.cs" />

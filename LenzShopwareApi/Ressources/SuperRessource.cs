@@ -11,7 +11,7 @@ namespace Lenz.ShopwareApi.Ressources
     {
         protected String ressourceUrl;
 
-        private IRestClient client { get; set; }
+        protected IRestClient client { get; set; }
 
         public SuperRessource(IRestClient client) {
             this.client = client;
@@ -64,7 +64,7 @@ namespace Lenz.ShopwareApi.Ressources
 
         public void update(TResponse data)
         {
-            String response = this.executeUpdate(data, "1");
+            String response = this.executeUpdate(data, "");
         }
 
         protected String executeUpdate(TResponse data, String id)
@@ -119,6 +119,12 @@ namespace Lenz.ShopwareApi.Ressources
         private String execute(string ressource, RestSharp.Method method, List<KeyValuePair<String, String>> parameters)
         {
             return execute(ressource, method, parameters, "");
+        }
+
+        private String execute(ApiRequest request)
+        {
+
+            return "";
         }
 
         private String execute(string ressource, RestSharp.Method method, List<KeyValuePair<String, String>> parameters, String body)
