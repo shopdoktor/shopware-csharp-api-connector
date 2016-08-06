@@ -8,9 +8,9 @@ namespace Lenz.ShopwareApi.Models.Categories
 {
     public class Category
     {
-        public int id;
+        public int? id;
         public int parentId;
-        public int streamId;
+        public int? streamId;
         public string name;
         public int position;
         public string metaTitle;
@@ -29,10 +29,12 @@ namespace Lenz.ShopwareApi.Models.Categories
         public string changed;
         public string added;
         public int mediaId;
-        public string attribute;
-        //public string emotions;
+        public List<string> attribute;
+        // todo: Replace object with correct type.
+        public object emotions;
         public string media;
-        //public List<string> customerGroups;
+        // todo: Replace object with correct type.
+        public List<object> customerGroups;
         public int childrenCount;
         public int articleCount;
     }

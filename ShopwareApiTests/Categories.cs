@@ -24,7 +24,7 @@ namespace ShopwareApiTests
             {
                 if(category.name == "Deutsch")
                 {
-                    categoryID = category.id;
+                    categoryID = (int) category.id;
                 }
             }
 
@@ -37,7 +37,7 @@ namespace ShopwareApiTests
             ShopwareApi shopwareApi = ApiConnection.getDemoApi();
             try
             {
-                Category category = shopwareApi.getCategoryRessource().get(2);
+                Category category = shopwareApi.getCategoryRessource().get(5);
                 Debug.WriteLine("Found category with name: " + category.name);
             }
             catch (Exception e)

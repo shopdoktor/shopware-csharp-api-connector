@@ -84,10 +84,10 @@
   <ItemGroup>
     <Compile Include="ApiResponse.cs" />
     <Compile Include="JSON.net\SingleOrArrayConverter.cs" />
-    <Compile Include="Models\Articles\ArticleDetail.cs" />
     <Compile Include="Models\Articles\ArticleMain.cs" />
     <Compile Include="Models\Articles\ArticleMainDetail.cs" />
     <Compile Include="Models\Articles\Attribute.cs" />
+    <Compile Include="Models\Articles\ArticleDetail.cs" />
     <Compile Include="Models\Articles\ConfiguratorOption.cs" />
     <Compile Include="Models\Articles\CustomerGroup.cs" />
     <Compile Include="Models\Articles\Download.cs" />
